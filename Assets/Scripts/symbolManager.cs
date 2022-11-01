@@ -8,14 +8,16 @@ public class symbol_Generator : MonoBehaviour
 {
     public string symbolString = "";
     public int turnNum = 0;
-    public TMP_Text personText;
+    public TMP_Text correctText;
+    public TMP_Text playerText;
 
     // Start is called before the first frame update
     void Start()
     {
-        personText = GameObject.FindGameObjectWithTag("Correct Text").GetComponent<TextMeshProUGUI>();
+        correctText = GameObject.FindGameObjectWithTag("Correct Text").GetComponent<TextMeshProUGUI>();
         CreateSymbolString();
     }
+
 
     public void CreateSymbolString()
     {
@@ -53,6 +55,6 @@ public class symbol_Generator : MonoBehaviour
         }
         Debug.Log("Symbol String: " + symbolString);
         // text will look like symbols using a custom font
-        personText.text = symbolString;
+        correctText.text = symbolString;
     }
 }
