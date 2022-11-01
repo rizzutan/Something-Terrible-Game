@@ -4,20 +4,47 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class symbol_Generator : MonoBehaviour
+public class symbolManager : MonoBehaviour
 {
     public string symbolString = "";
     public int turnNum = 0;
     public TMP_Text correctText;
     public TMP_Text playerText;
+    bool isPlayerCorrect;
+
+    InputManager IM;
 
     // Start is called before the first frame update
     void Start()
     {
+        IM = GameObject.Find("InputManager").GetComponent<InputManager>();
         correctText = GameObject.FindGameObjectWithTag("Correct Text").GetComponent<TextMeshProUGUI>();
+        playerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         CreateSymbolString();
     }
+    void Update()
+    {
+        if (playerText.text.Length == correctText.text.Length)
+        {
+            IM.playerCanInput = false;
+            isPlayerCorrect = CheckPlayerInput();
 
+            if (isPlayerCorrect) 
+            {
+                Debug.Log("Ding! Correct!");
+                // wait [x] amount of seconds
+                IM.playerCanInput = true;
+                playerText.text = "";
+            }
+            else
+            {
+                Debug.Log("BZZZT! INcorrect!");
+                // wait [x] amount of seconds
+                IM.playerCanInput = true;
+                playerText.text = "";
+            }
+        }
+    }
 
     public void CreateSymbolString()
     {
@@ -56,5 +83,17 @@ public class symbol_Generator : MonoBehaviour
         Debug.Log("Symbol String: " + symbolString);
         // text will look like symbols using a custom font
         correctText.text = symbolString;
+    }
+    public bool CheckPlayerInput()
+    {
+        for (int i = 0; i < correctText.text.Length; i++)
+        {
+            if (correctText.text[i] == playerText.text[i])
+            {
+
+            }
+            else { return false; }
+        }
+        return true;
     }
 }
