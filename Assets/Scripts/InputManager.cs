@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     public bool pauseButtonInput = false;
 
     public bool playerCanInput = true;
+    public float lerpPercentageComplete = 0;
 
     public TMP_Text playerText;
     // Start is called before the first frame update
@@ -39,12 +40,27 @@ public class InputManager : MonoBehaviour
             // back/click button
             pauseButtonInput = Input.GetButton("click");
 
-            if (verticalInput == 1) { playerText.text += 'W'; }
-            else if (verticalInput == -1) { playerText.text += 'S'; }
-            else if (horzontalInput == -1) { playerText.text += 'A'; }
-            else if (horzontalInput == 1) { playerText.text += 'D'; }
+            if (verticalInput == 1) { playerText.text += 'W'; playerCanInput = false; verticalInput = 0; }
+            else if (verticalInput == -1) { playerText.text += 'S'; playerCanInput = false; verticalInput = 0; }
+            else if (horzontalInput == -1) { playerText.text += 'A'; playerCanInput = false; horzontalInput = 0; }
+            else if (horzontalInput == 1) { playerText.text += 'D'; playerCanInput = false; horzontalInput = 0; }
             // "P" will be " "(a space) once custom font is set up
-            else if (spaceButtonInput) { playerText.text += 'P'; }
+            else if (spaceButtonInput == true) { playerText.text += 'P'; playerCanInput = false; spaceButtonInput = false; }
+            else if (pauseButtonInput) { /*playerText.text += 'P';*/ playerCanInput = false; pauseButtonInput = false; }
+        }
+        else { PauseInputUntil(0.5f); }
+    }
+    public void PauseInputUntil(float seconds)
+    {
+        
+        {
+            //Calculates the percentageComplete to be used by LerpInput
+            // acts as the acceleration time and the deceleration time, depending on if the player has pressed an input key or not
+            if (lerpPercentageComplete >= 0 && lerpPercentageComplete < 1)
+            {
+                lerpPercentageComplete += Time.deltaTime / seconds;
+            }
+            else if (lerpPercentageComplete > 1) { lerpPercentageComplete = 0; playerCanInput = true; }
         }
     }
 }

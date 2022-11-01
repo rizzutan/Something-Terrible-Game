@@ -26,28 +26,30 @@ public class symbolManager : MonoBehaviour
     {
         if (playerText.text.Length == correctText.text.Length)
         {
-            IM.playerCanInput = false;
             isPlayerCorrect = CheckPlayerInput();
-
+            //IM.PauseInputUntil(3f);
             if (isPlayerCorrect) 
             {
                 Debug.Log("Ding! Correct!");
                 // wait [x] amount of seconds
-                IM.playerCanInput = true;
                 playerText.text = "";
+                CreateSymbolString();
+                turnNum += 1;
             }
             else
             {
                 Debug.Log("BZZZT! INcorrect!");
                 // wait [x] amount of seconds
-                IM.playerCanInput = true;
                 playerText.text = "";
+                CreateSymbolString();
+                turnNum -= 1;
             }
         }
     }
 
     public void CreateSymbolString()
     {
+        symbolString = "";
         // 1 == 'w key'
         // 2 == 'a key'
         // 3 == 's key'
