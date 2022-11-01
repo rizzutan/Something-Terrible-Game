@@ -28,8 +28,10 @@ public class InputManager : MonoBehaviour
         // using GetButton allows us to check if the button has been held for [x] amount of seconds, like 0.5 or 0.25 seconds.
 
         // start/space button
-        startButtonInput = Input.GetButton("start");
+        startButtonInput = Input.GetButton("space");
         // back/click button
-        backButtonInput = Input.GetButton("back");
+        backButtonInput = Input.GetButton("click");
+
+
     }
 }
