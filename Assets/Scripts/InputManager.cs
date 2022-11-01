@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InputManager : MonoBehaviour
 {
     public float horzontalInput = 0;
     public float verticalInput = 0;
-    public bool startButtonInput = false;
-    public bool backButtonInput = false;
+    public bool spaceButtonInput = false;
+    public bool pauseButtonInput = false;
 
     public bool playerCanInput = true;
+
+    public TMP_Text playerText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -32,10 +35,16 @@ public class InputManager : MonoBehaviour
             // using GetButton allows us to check if the button has been held for [x] amount of seconds, like 0.5 or 0.25 seconds.
 
             // start/space button
-            startButtonInput = Input.GetButton("space");
+            spaceButtonInput = Input.GetButton("space");
             // back/click button
-            backButtonInput = Input.GetButton("click");
-        }
+            pauseButtonInput = Input.GetButton("click");
 
+            if (verticalInput == 1) { playerText.text += 'W'; }
+            else if (verticalInput == -1) { playerText.text += 'S'; }
+            else if (horzontalInput == -1) { playerText.text += 'A'; }
+            else if (horzontalInput == 1) { playerText.text += 'D'; }
+            // "P" will be " "(a space) once custom font is set up
+            else if (spaceButtonInput) { playerText.text += 'P'; }
+        }
     }
 }

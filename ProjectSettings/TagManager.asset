@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Correct Text
+  - Player Text
   layers:
   - Default
   - TransparentFX
