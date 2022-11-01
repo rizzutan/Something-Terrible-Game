@@ -18,9 +18,9 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         // left and right controls
-        horzontalInput = Input.GetAxisRaw("horizontal");
+        horzontalInput = Input.GetAxisRaw("Horizontal");
         // up and down controls
-        verticalInput = Input.GetAxisRaw("horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
         // button inputs use GetButton to allow buttons to be pressed and held for a certian amount of time.
         // this game's controls aren't standard to the player, and they could make a mistake they would
