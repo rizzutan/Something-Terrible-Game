@@ -14,15 +14,16 @@ public class InputManager : MonoBehaviour
     public bool playerCanInput = true;
     public float lerpPercentageComplete = 0;
 
-    public TMP_Text playerText;
-    MenuSwitcher MS;
+    public string playerTextLetters;
+    public TMP_Text playerTextSymbols;
+    public ChangeScene CS;
     Scene currentScene;
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-        if (currentScene.buildIndex == 0) { MS = GameObject.FindGameObjectWithTag("Menu Switcher").GetComponent<MenuSwitcher>(); }
-        else if (currentScene.buildIndex == 1) { playerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>(); } 
+        CS = GameObject.FindGameObjectWithTag("Scene Manager").GetComponent<ChangeScene>();
+        playerTextSymbols = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>(); 
     }
 
     // Update is called once per frame
@@ -47,21 +48,22 @@ public class InputManager : MonoBehaviour
 
             if (currentScene.buildIndex == 0)
             {
-                if ((int)verticalInput == 1) { MS.MenuSwitch((int)verticalInput); playerCanInput = false; verticalInput = 0; }
-                else if ((int)verticalInput == -1) { MS.MenuSwitch((int)verticalInput); playerCanInput = false; verticalInput = 0; }
-                else if ((int)horzontalInput == -1) { playerCanInput = false; horzontalInput = 0; }
-                else if ((int)horzontalInput == 1) { playerCanInput = false; horzontalInput = 0; }
+                Debug.Log("TEST1");
+                if (verticalInput == 1) { CS.ChangeSceneTo("MainGame"); playerCanInput = false; verticalInput = 0; }
+                else if (verticalInput == -1) { playerCanInput = false; verticalInput = 0; }
+                else if (horzontalInput == -1) { playerCanInput = false; horzontalInput = 0; }
+                else if (horzontalInput == 1) { playerCanInput = false; horzontalInput = 0; }
                 else if (spaceButtonInput) {  playerCanInput = false; spaceButtonInput = false; }
                 else if (pauseButtonInput) {  playerCanInput = false; pauseButtonInput = false; }
             }
             else if (currentScene.buildIndex == 1)
             {
-                if (verticalInput == 1) { playerText.text += 'W'; playerCanInput = false; verticalInput = 0; }
-                else if (verticalInput == -1) { playerText.text += 'S'; playerCanInput = false; verticalInput = 0; }
-                else if (horzontalInput == -1) { playerText.text += 'A'; playerCanInput = false; horzontalInput = 0; }
-                else if (horzontalInput == 1) { playerText.text += 'D'; playerCanInput = false; horzontalInput = 0; }
-                else if (spaceButtonInput) { playerText.text += 'P'; playerCanInput = false; spaceButtonInput = false; }
-                else if (pauseButtonInput) { playerText.text += 'B'; playerCanInput = false; pauseButtonInput = false; }
+                if (verticalInput == 1) { playerCanInput = false; verticalInput = 0; }
+                else if (verticalInput == -1) { playerTextLetters += 'S'; playerTextSymbols.text += "<sprite=0>"; playerCanInput = false; verticalInput = 0; }
+                else if (horzontalInput == -1) { playerTextLetters += 'A'; playerTextSymbols.text += "<sprite=3>"; playerCanInput = false; horzontalInput = 0; }
+                else if (horzontalInput == 1) { playerTextLetters += 'D'; playerTextSymbols.text += "<sprite=1>"; playerCanInput = false; horzontalInput = 0; }
+                else if (spaceButtonInput) { playerTextLetters += 'P'; playerTextSymbols.text += "<sprite=4>"; playerCanInput = false; spaceButtonInput = false; }
+                else if (pauseButtonInput) { playerTextLetters += 'O'; playerTextSymbols.text += "<sprite=2>"; playerCanInput = false; pauseButtonInput = false; }
             }
         }
         else { PauseInputUntil(0.5f); }
@@ -76,4 +78,5 @@ public class InputManager : MonoBehaviour
             }
             else if (lerpPercentageComplete > 1) { lerpPercentageComplete = 0; playerCanInput = true; }
     }
+    
 }
