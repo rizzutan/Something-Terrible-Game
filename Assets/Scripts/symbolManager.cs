@@ -76,7 +76,6 @@ public class symbolManager : MonoBehaviour
                     symbol = 'D';
                     break;
                 default:
-                    // "P" will be " "(a space) once custom font is set up
                     symbol = 'P';
                     break;
             }
@@ -90,11 +89,11 @@ public class symbolManager : MonoBehaviour
     {
         for (int i = 0; i < correctText.text.Length; i++)
         {
-            if (correctText.text[i] == playerText.text[i])
+            if (correctText.text[i] != playerText.text[i])
             {
-
+                return false;
             }
-            else { return false; }
+            
         }
         return true;
     }

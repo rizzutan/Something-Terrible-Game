@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Correct Text
   - Player Text
+  - Menu Switcher
   layers:
   - Default
   - TransparentFX
