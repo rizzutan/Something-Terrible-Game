@@ -8,25 +8,27 @@ public class symbolManager : MonoBehaviour
 {
     public string symbolString = "";
     public int turnNum = 0;
-    public TMP_Text correctText;
+    public string correctText;
     public TMP_Text tmpPlayerText;
-
+    
     public string playerText;
     bool isPlayerCorrect;
 
     InputManager IM;
+    TextManager TM;
+    public GameObject FloatingLetter;
 
     // Start is called before the first frame update
     void Start()
     {
         IM = GameObject.Find("InputManager").GetComponent<InputManager>();
-        correctText = GameObject.FindGameObjectWithTag("Correct Text").GetComponent<TextMeshProUGUI>();
+        TM = GameObject.Find("TextManager").GetComponent<TextManager>();
         tmpPlayerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         CreateSymbolString();
     }
     void Update()
     {
-        if (IM.playerTextLetters.Length == correctText.text.Length && IM.playerTextLetters.Length != 0)
+        if (IM.playerTextLetters.Length == correctText.Length && IM.playerTextLetters.Length != 0)
         {
             playerText = IM.playerTextLetters;
             isPlayerCorrect = CheckPlayerInput();
@@ -49,7 +51,6 @@ public class symbolManager : MonoBehaviour
                 IM.playerTextLetters = "";
                 tmpPlayerText.text = "";
                 CreateSymbolString();
-                turnNum -= 1;
             }
         }
     }
@@ -57,19 +58,27 @@ public class symbolManager : MonoBehaviour
     public void CreateSymbolString()
     {
         symbolString = "";
-        // 1 == 'a key'
-        // 2 == 's key'
-        // 3 == 'd key'
-        // 4 == 'spacebar/p key'
-        // 5 == 'o key'
+
+
+        
+
+
         int numOfSymbols = 3 + Mathf.Min(2,turnNum) + Random.Range(0, Mathf.Min(turnNum, 10));
+        string symbolNumToAssign = "";
         for (int i = 0; i < numOfSymbols; i++)
         {
             char symbol;
             int symbolNum = (Random.Range(1, 6));
+            symbolNumToAssign += symbolNum.ToString();
 
             switch (symbolNum)
             {
+                // numbers to symbols
+                // 1 == 'a key' == TriangleSymbol
+                // 2 == 's key' == HeartSymbol
+                // 3 == 'd key' == SquareSymbol
+                // 4 == 'spacebar/p key' == DiamondSymbol
+                // 5 == 'o key' == CircleSymbol
                 case 1:
                     symbol = 'A';
                     break;
@@ -89,14 +98,15 @@ public class symbolManager : MonoBehaviour
             symbolString += symbol;
         }
         Debug.Log("Symbol String: " + symbolString);
-        // text will look like symbols using a custom font
-        correctText.text = symbolString;
+        correctText = symbolString;
+
+        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(symbolNumToAssign, TM.tutorialTextAnswer);
     }
     public bool CheckPlayerInput()
     {
-        for (int i = 0; i < correctText.text.Length; i++)
+        for (int i = 0; i < correctText.Length; i++)
         {
-            if (correctText.text[i] != playerText[i])
+            if (correctText[i] != playerText[i])
             {
                 return false;
             }
