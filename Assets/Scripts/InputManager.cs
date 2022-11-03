@@ -65,27 +65,27 @@ public class InputManager : MonoBehaviour
                 }
                 else if (verticalInputN)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[0][0]);
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[TM.textShown][0]);
                     input.Play();
                 }      //ghost
                 else if (horzontalInputN)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[0][1]);
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[TM.textShown][1]);
                     input.Play();
                 }     //triangle
                 else if (horzontalInputP)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[0][2]);
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[TM.textShown][2]);
                     input.Play();
                 }     //square
                 else if (spaceButtonInput)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[0][3]);
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[TM.textShown][3]);
                     input.Play();
                 }    //diamond
                 else if (pauseButtonInput)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[0][4]);
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[TM.textShown][4]);
                     input.Play();
                 }    //circle
             }
