@@ -21,6 +21,8 @@ public class InputManager : MonoBehaviour
     public TextManager TM;
     Scene currentScene;
 
+    [SerializeField] AudioSource input;
+
     string textInOrder;
     // Start is called before the first frame update
     void Start()
@@ -54,15 +56,47 @@ public class InputManager : MonoBehaviour
                 else if (spaceButtonInput) { }
                 else if (pauseButtonInput) { }
             }
-            else if (currentScene.buildIndex == 1 || currentScene.buildIndex == 3)
+            else if (currentScene.buildIndex == 1 || currentScene.buildIndex == 4)
             {
-                if (verticalInputP) { TM.ResetText(); print("key: W"); }
-                else if (verticalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[0][0]); }      //ghost
-                else if (horzontalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[0][1]); }     //triangle
-                else if (horzontalInputP) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[0][2]); }     //square
-                else if (spaceButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[0][3]); }    //diamond
-                else if (pauseButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[0][4]); }    //circle
+                if (verticalInputP)
+                {
+                    TM.ResetText(); print("key: W");
+                    input.Play();
+                }
+                else if (verticalInputN)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[0][0]);
+                    input.Play();
+                }      //ghost
+                else if (horzontalInputN)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[0][1]);
+                    input.Play();
+                }     //triangle
+                else if (horzontalInputP)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[0][2]);
+                    input.Play();
+                }     //square
+                else if (spaceButtonInput)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[0][3]);
+                    input.Play();
+                }    //diamond
+                else if (pauseButtonInput)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[0][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[0][4]);
+                    input.Play();
+                }    //circle
             }
+        else if (currentScene.buildIndex == 2)
+        {
+
+        }
+        else if (currentScene.buildIndex == 3)
+        {
+
+        }
     }
     
     
