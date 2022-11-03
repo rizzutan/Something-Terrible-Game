@@ -49,14 +49,14 @@ public class InputManager : MonoBehaviour
 
             if (currentScene.buildIndex == 0)
             {
-                if (verticalInputP) { CS.ChangeSceneTo("MainGame"); verticalInputP = false; }
+                if (verticalInputP) { CS.ChangeSceneTo("ZachMainGame"); verticalInputP = false; }
                 else if (verticalInputN) { }
                 else if (horzontalInputN) { }
                 else if (horzontalInputP) { }
                 else if (spaceButtonInput) { }
                 else if (pauseButtonInput) { }
             }
-            else if (currentScene.buildIndex == 1 || currentScene.buildIndex == 4)
+            else if (currentScene.buildIndex == 1)
             {
                 if (verticalInputP)
                 {
