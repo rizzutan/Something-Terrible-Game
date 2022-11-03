@@ -29,9 +29,13 @@ public class AssignSymbol : MonoBehaviour
 
     public void InstantiateFloatingSymbol(string word)
     {
+        List<Vector3> positions = new();
+        positions.AddRange(symbolPositions);
         for (int i = 0; i < 5; i++)
         {
-            GameObject symbol = Instantiate(symbols[i], symbolPositions[i] + new Vector3(Random.Range(-0.99f,1), Random.Range(-0.99f, 1), 0), Quaternion.identity);
+            int value = Random.Range(0, positions.Count - 1);
+            GameObject symbol = Instantiate(symbols[i], positions[value] + new Vector3(Random.Range(-0.99f,1), Random.Range(-0.99f, 1), 0), Quaternion.identity);
+            positions.RemoveAt(value);
             symbol.transform.localScale = Vector3.one * 0.4f;
             if (i < word.Length)
             {
