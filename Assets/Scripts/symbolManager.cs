@@ -15,6 +15,7 @@ public class symbolManager : MonoBehaviour
     InputManager IM;
     TextManager TM;
     AssignSymbol AS;
+    lifeManager LM;
     public GameObject FloatingLetter;
 
 
@@ -25,6 +26,7 @@ public class symbolManager : MonoBehaviour
         IM = GameObject.Find("InputManager").GetComponent<InputManager>();
         TM = GameObject.Find("TextManager").GetComponent<TextManager>();
         //AS = GameObject.Find("AssignSymbol").GetComponent<AssignSymbol>();
+        LM = GameObject.Find("LifeManager").GetComponent<lifeManager>();
         //tmpPlayerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         CreateSymbolString();
     }
@@ -50,7 +52,8 @@ public class symbolManager : MonoBehaviour
         {
             Debug.Log("BZZZT! INcorrect!");
             // wait [x] amount of seconds
-            TM.ResetText();          
+            TM.ResetText();
+            LM.lives--;
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
         }
 

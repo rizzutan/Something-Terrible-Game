@@ -80,15 +80,10 @@ public class TextManager : MonoBehaviour
         // gets player's inputed text
         bool flaggedFalse = false;
         string playersInputedText = playerTypedText;
-        for (int i = 0; i < tutorialTextAnswer[textShown].Length; i++)
+        if (tutorialTextAnswer[textShown] != playerText)
         {
-            Debug.Log("Text Answer:   "+ tutorialTextAnswer[textShown][i]);
-            Debug.Log("Player Answer: " + playerText[i]);
-            if (tutorialTextAnswer[textShown][i] != playerText[i])
-            {
-                SM.sentMessage(false);
-                flaggedFalse = true;
-            }
+            SM.sentMessage(false);
+            flaggedFalse = true;
         }
         if (!flaggedFalse) { SM.sentMessage(true); }
         

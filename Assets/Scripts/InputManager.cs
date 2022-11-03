@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     public TMP_Text playerTextSymbols;
     public ChangeScene CS;
     public TextManager TM;
+    lifeManager LM;
     Scene currentScene;
 
     [SerializeField] AudioSource input;
@@ -30,6 +31,7 @@ public class InputManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         CS = GameObject.FindGameObjectWithTag("Scene Manager").GetComponent<ChangeScene>();
         TM = GameObject.Find("TextManager").GetComponent<TextManager>();
+        LM = GameObject.Find("LifeManager").GetComponent<lifeManager>();
         playerTextSymbols = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>(); 
     }
 
@@ -61,6 +63,7 @@ public class InputManager : MonoBehaviour
                 if (verticalInputP)
                 {
                     TM.ResetText(); print("key: W");
+                    LM.lives--;
                     input.Play();
                 }
                 else if (verticalInputN)
