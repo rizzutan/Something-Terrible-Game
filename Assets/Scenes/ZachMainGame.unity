@@ -630,7 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText:
   - '_____ my plants.         '
-  - delete my _____ing history.
+  - 'delete my _____ing history.          '
   tutorialTextAnswer:
   - water
   - brows
