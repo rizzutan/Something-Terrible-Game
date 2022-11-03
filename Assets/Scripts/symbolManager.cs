@@ -24,21 +24,16 @@ public class symbolManager : MonoBehaviour
     {
         IM = GameObject.Find("InputManager").GetComponent<InputManager>();
         TM = GameObject.Find("TextManager").GetComponent<TextManager>();
-        AS = GameObject.Find("TextManager").GetComponent<AssignSymbol>();
+        //AS = GameObject.Find("AssignSymbol").GetComponent<AssignSymbol>();
         //tmpPlayerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         CreateSymbolString();
     }
     void Update()
     {
-        if (IM.playerTextLetters.Length != 0 && IM.playerTextLetters[IM.playerTextLetters.Length-1] == 'W')
-        {
-            sentMessage();
-            
-        }
+
     }
-    public void sentMessage()
+    public void sentMessage(bool isPlayerCorrect)
     {
-        isPlayerCorrect = CheckPlayerInput();
         //IM.PauseInputUntil(3f);
         if (isPlayerCorrect)
         {
@@ -83,44 +78,28 @@ public class symbolManager : MonoBehaviour
                 // 1 == 'a key' == TriangleSymbol
                 // 2 == 's key' == HeartSymbol
                 // 3 == 'd key' == SquareSymbol
-                // 4 == 'p key' (f on makey-makey)== DiamondSymbol
-                // 5 == 'o key' (g on makey-makey) == CircleSymbol
+                // 4 == 'f key' (f on makey-makey)== DiamondSymbol
+                // 5 == 'g key' (g on makey-makey) == CircleSymbol
 
+                case 0:
+                    symbol = TM.tutorialTextAnswer[TM.textShown][0];
+                    break;
                 case 1:
-                    symbol = 'A';
+                    symbol = TM.tutorialTextAnswer[TM.textShown][1];
                     break;
                 case 2:
-                    symbol = 'S';
+                    symbol = TM.tutorialTextAnswer[TM.textShown][2];
                     break;
                 case 3:
-                    symbol = 'D';
+                    symbol = TM.tutorialTextAnswer[TM.textShown][3];
                     break;
-                case 4:
-                    symbol = 'F';
-                    break;
-                case 5:
-                    symbol = 'G';
+                default:
+                    symbol = TM.tutorialTextAnswer[TM.textShown][4];
                     break;
             }
             symbolString += symbol;
         }
         Debug.Log("Symbol String: " + symbolString);
         FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(TM.tutorialTextAnswer[turnNum]);
-    }
-
-
-    public bool CheckPlayerInput()
-    {
-        // gets player's inputed text
-        string playerText = TM.playerTypedText;
-        for (int i = 0; i < TM.tutorialTextAnswer[TM.textShown].Length; i++)
-        {
-            if (TM.tutorialTextAnswer[TM.textShown][i] != playerText[i])
-            {
-                return false;
-            }
-            
-        }
-        return true;
     }
 }

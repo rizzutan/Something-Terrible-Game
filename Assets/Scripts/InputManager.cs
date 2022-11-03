@@ -13,7 +13,6 @@ public class InputManager : MonoBehaviour
     public bool spaceButtonInput = false;
     public bool pauseButtonInput = false;
 
-    public bool playerCanInput = true;
     public float lerpPercentageComplete = 0;
 
     public string playerTextLetters;
@@ -48,21 +47,21 @@ public class InputManager : MonoBehaviour
 
             if (currentScene.buildIndex == 0)
             {
-                if (verticalInputP) { CS.ChangeSceneTo("MainGame"); playerCanInput = false; verticalInputP = false; }
-                else if (verticalInputN) { playerCanInput = false; }
-                else if (horzontalInputN) { playerCanInput = false; }
-                else if (horzontalInputP) { playerCanInput = false; }
-                else if (spaceButtonInput) { playerCanInput = false; }
-                else if (pauseButtonInput) { playerCanInput = false; }
+                if (verticalInputP) { CS.ChangeSceneTo("MainGame"); verticalInputP = false; }
+                else if (verticalInputN) { }
+                else if (horzontalInputN) { }
+                else if (horzontalInputP) { }
+                else if (spaceButtonInput) { }
+                else if (pauseButtonInput) { }
             }
-            else if (currentScene.buildIndex == 1)
+            else if (currentScene.buildIndex == 1 || currentScene.buildIndex == 3)
             {
-                if (verticalInputP) { TM.ResetText(); playerCanInput = false;}
-                else if (verticalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][0]); playerCanInput = false; }      //ghost
-                else if (horzontalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][1]); playerCanInput = false; }     //triangle
-                else if (horzontalInputP) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][2]); playerCanInput = false; }     //square
-                else if (spaceButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][3]); playerCanInput = false; }    //diamond?
-                else if (pauseButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][4]); playerCanInput = false; }    //circle?
+                if (verticalInputP) { TM.ResetText(); print("key: W"); }
+                else if (verticalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[0][0]); }      //ghost
+                else if (horzontalInputN) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[0][1]); }     //triangle
+                else if (horzontalInputP) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[0][2]); }     //square
+                else if (spaceButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[0][3]); }    //diamond
+                else if (pauseButtonInput) { TM.AddTextToTextbox(TM.tutorialTextAnswer[0][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[0][4]); }    //circle
             }
     }
     

@@ -9,6 +9,7 @@ TagManager:
   - Menu Switcher
   - Scene Manager
   - FloatingSymbol
+  - SymbolManager
   layers:
   - Default
   - TransparentFX

@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame.unity
     guid: 4dc35095a2cdccc4386e42c149cc898b
+  - enabled: 1
+    path: Assets/Scenes/HelpScreen.unity
+    guid: 5961579b85a2ad74d9821ed39fbd733b
+  - enabled: 1
+    path: Assets/Scenes/ZachMainGame.unity
+    guid: 8952fb628a4487b448299317ac2a2113
   m_configObjects: {}

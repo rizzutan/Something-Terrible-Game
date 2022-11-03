@@ -7,6 +7,7 @@ public class TextManager : MonoBehaviour
 {
     public string[] tutorialText = new string[1];
     public string[] tutorialTextAnswer = new string[1];
+    public string playerText;
     public string playerTypedText;
     public int textShown = 0;
     public TMP_Text playerTextSymbols;
@@ -17,6 +18,7 @@ public class TextManager : MonoBehaviour
     {
         playerTextSymbols = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         SM = GameObject.FindGameObjectWithTag("SymbolManager").GetComponent<symbolManager>();
+        ResetText();
     }
 
     // Update is called once per frame
@@ -52,8 +54,13 @@ public class TextManager : MonoBehaviour
         }
         playerTypedText = newPlayerTypedText;
 
+        
+
+        playerTextSymbols.text = playerTypedText;
+        playerText += letter.ToString();
+
         print(newPlayerTypedText);
-        if (!CheckIfUnderscore()) { SM.CheckPlayerInput(); }
+        if (!CheckIfUnderscore()) { CheckPlayerInput(); }
     }
     public bool CheckIfUnderscore()
     {
@@ -61,26 +68,30 @@ public class TextManager : MonoBehaviour
         {
             if (playerTypedText[i] == '_')
             {
-                return false;
+                return true;
             }
 
         }
-        return true;
+        return false;
     }
 
-    /*public void ShuffleLetters(string answer)
+    public void CheckPlayerInput()
     {
-        char[] charAnswer = new char[answer.Length];
-        string scrambledAnswer = "";
-        for (int i = 0; i < answer.Length - 1; i++)
+        // gets player's inputed text
+        bool flaggedFalse = false;
+        string playersInputedText = playerTypedText;
+        for (int i = 0; i < tutorialTextAnswer[textShown].Length; i++)
         {
-            int rnd = Random.Range(i, answer.Length);
-            charAnswer[rnd] = '-';
-            scrambledAnswer += answer[rnd].ToString();
-
-
+            Debug.Log("Text Answer:   "+ tutorialTextAnswer[textShown][i]);
+            Debug.Log("Player Answer: " + playerText[i]);
+            if (tutorialTextAnswer[textShown][i] != playerText[i])
+            {
+                SM.sentMessage(false);
+                flaggedFalse = true;
+            }
         }
-    }*/
-
+        if (!flaggedFalse) { SM.sentMessage(true); }
+        
+    }
 
 }

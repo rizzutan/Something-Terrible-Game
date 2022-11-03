@@ -276,9 +276,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText:
-  - '[_____] my plants.'
+  - '[_____] my plants.         '
+  - '[_____] my FUCKING PLANTS CRAIG!.         '
   tutorialTextAnswer:
   - water
+  - water
+  playerText: 
+  playerTypedText: 
+  textShown: 0
+  playerTextSymbols: {fileID: 0}
+  SM: {fileID: 0}
 --- !u!4 &919202626
 Transform:
   m_ObjectHideFlags: 0
@@ -931,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SymbolManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4980621710162383291, guid: b0364610b67c50f40ad82d84e9c6e200, type: 3}
+      propertyPath: m_TagString
+      value: SymbolManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0364610b67c50f40ad82d84e9c6e200, type: 3}
 --- !u!1001 &7596056086637914889
@@ -1091,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9190491251721321715, guid: 0140e2f074e0ba34d8272426a2106d15, type: 3}
       propertyPath: m_text
-      value: '[_____] my plants.'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9190491251721321715, guid: 0140e2f074e0ba34d8272426a2106d15, type: 3}
       propertyPath: m_fontSize
