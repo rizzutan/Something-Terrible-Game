@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class lifeManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class lifeManager : MonoBehaviour
         else if (lives == 0)
         {
             text.text = "";
-            print("death");
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
     }
 }

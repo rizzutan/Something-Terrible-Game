@@ -51,12 +51,9 @@ public class InputManager : MonoBehaviour
 
             if (currentScene.buildIndex == 0)
             {
-                if (verticalInputP) { CS.ChangeSceneTo("ZachMainGame"); verticalInputP = false; }
-                else if (verticalInputN) { }
-                else if (horzontalInputN) { }
-                else if (horzontalInputP) { }
-                else if (spaceButtonInput) { }
-                else if (pauseButtonInput) { }
+                if (verticalInputP) { CS.ChangeSceneTo("ZachMainGame"); }
+                else if (verticalInputN) { CS.ChangeSceneTo("CreditsScreen"); }
+                else if (horzontalInputP) { CS.ChangeSceneTo("HelpScreen"); }
             }
             else if (currentScene.buildIndex == 1)
             {
@@ -94,11 +91,11 @@ public class InputManager : MonoBehaviour
             }
         else if (currentScene.buildIndex == 2)
         {
-
+            if (horzontalInputN) { CS.ChangeSceneTo("TitleScreen"); }
         }
         else if (currentScene.buildIndex == 3)
         {
-
+            if (horzontalInputN) { CS.ChangeSceneTo("TitleScreen"); }
         }
     }
     
