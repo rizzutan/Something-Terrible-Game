@@ -27,16 +27,23 @@ public class AssignSymbol : MonoBehaviour
 
     }
 
-    public void InstantiateFloatingSymbol(string symbolNumString, string letter)
+    public void InstantiateFloatingSymbol(string word)
     {
         for (int i = 0; i < 5; i++)
         {
-            if (i < symbolNumString.Length)
+            GameObject symbol = Instantiate(symbols[i], symbolPositions[i] + new Vector3(Random.Range(-0.99f,1), Random.Range(-0.99f, 1), 0), Quaternion.identity);
+            symbol.transform.localScale = Vector3.one * 0.4f;
+            if (i < word.Length)
             {
-                int symbolNum = (int)symbolNumString[i];
+                symbol.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = word[i].ToString();
             }
-            GameObject symbol = Instantiate(symbols[i], symbolPositions[i], Quaternion.identity);
-            symbol.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = letter[i].ToString();
+            else 
+            {
+                string alphabet = "fghjklnpqrstvwxyz";
+                string randomLetter = alphabet[Random.Range(0, alphabet.Length-1)].ToString();
+                symbol.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = randomLetter;
+            }
+            
         }
     }
 }
