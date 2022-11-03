@@ -79,6 +79,7 @@ public class symbolManager : MonoBehaviour
                 // 3 == 'd key' == SquareSymbol
                 // 4 == 'spacebar/p key' == DiamondSymbol
                 // 5 == 'o key' == CircleSymbol
+
                 case 1:
                     symbol = 'A';
                     break;
@@ -100,7 +101,7 @@ public class symbolManager : MonoBehaviour
         Debug.Log("Symbol String: " + symbolString);
         correctText = symbolString;
 
-        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(symbolNumToAssign, TM.tutorialTextAnswer);
+        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(symbolNumToAssign, TM.tutorialTextAnswer[turnNum]);
     }
     public bool CheckPlayerInput()
     {

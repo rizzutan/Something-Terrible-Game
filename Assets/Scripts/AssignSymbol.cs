@@ -15,11 +15,12 @@ public class AssignSymbol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 0 == 'CircleSymbol'
-        // 1 == 'TriangleSymbol'
-        // 2 == 'SquareSymbol'
-        // 3 == 'HeartSymbol'
-        // 4 == 'DiamondSymbol'
+        // numbers to symbols
+        // 1 == 'a key' == TriangleSymbol
+        // 2 == 's key' == HeartSymbol
+        // 3 == 'd key' == SquareSymbol
+        // 4 == 'spacebar/p key' == DiamondSymbol
+        // 5 == 'o key' == CircleSymbol
 
 
     }
@@ -28,7 +29,10 @@ public class AssignSymbol : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            int symbolNum = (int)symbolNumString[i];
+            if (i < symbolNumString.Length) { 
+                int symbolNum = (int)symbolNumString[i];
+                GameObject symbol = Instantiate(symbols[i], transform.position, Quaternion.identity );
+            }
         }
     }
 }
