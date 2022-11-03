@@ -50,3 +50,9 @@ MonoBehaviour:
   - {fileID: 4438127657063481551, guid: bfc39c22825b503429990c6ff41d6fdd, type: 3}
   - {fileID: 1035069389372348156, guid: 54c1b948fffac2f45b47f10fb79c52c4, type: 3}
   - {fileID: 7846641207140613269, guid: 057c77cc96fdb124f88144b6425a40f7, type: 3}
+  symbolPositions:
+  - {x: -7, y: 0, z: 0}
+  - {x: -4, y: 2, z: 0}
+  - {x: 0, y: 3.5, z: 0}
+  - {x: 4, y: 2, z: 0}
+  - {x: 7, y: 0, z: 0}

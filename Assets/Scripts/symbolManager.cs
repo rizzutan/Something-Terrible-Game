@@ -77,8 +77,8 @@ public class symbolManager : MonoBehaviour
                 // 1 == 'a key' == TriangleSymbol
                 // 2 == 's key' == HeartSymbol
                 // 3 == 'd key' == SquareSymbol
-                // 4 == 'spacebar/p key' == DiamondSymbol
-                // 5 == 'o key' == CircleSymbol
+                // 4 == 'spacebar/p key' (f on makey-makey)== DiamondSymbol
+                // 5 == 'o key' (g on makey-makey) == CircleSymbol
 
                 case 1:
                     symbol = 'A';
