@@ -33,6 +33,7 @@ public class TextManager : MonoBehaviour
     }
     public void ResetText()
     {
+        playerText = "";
         playerTypedText = tutorialText[textShown];
         playerTextSymbols.text = tutorialText[textShown];
     }

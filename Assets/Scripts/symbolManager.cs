@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class symbolManager : MonoBehaviour
 {
     public string symbolString = "";
-    public int turnNum = 0;
     
     //public string playerText;
     bool isPlayerCorrect;
@@ -45,8 +44,6 @@ public class symbolManager : MonoBehaviour
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
             for (int i = 0; i < floatingSymbols.Length; i++) { Destroy(floatingSymbols[i]); }
             CreateSymbolString();
-            
-            turnNum += 1;
         }
         else
         {
@@ -103,6 +100,6 @@ public class symbolManager : MonoBehaviour
             symbolString += symbol;
         }
         Debug.Log("Symbol String: " + symbolString);
-        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(TM.tutorialTextAnswer[turnNum]);
+        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(TM.tutorialTextAnswer[TM.textShown]);
     }
 }
