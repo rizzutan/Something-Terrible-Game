@@ -12,10 +12,12 @@ public class TextManager : MonoBehaviour
     public int textShown = 0;
     public TMP_Text playerTextSymbols;
     public symbolManager SM;
+    public ChangeScene CS;
 
     // Start is called before the first frame update
     void Start()
     {
+        CS = GameObject.FindGameObjectWithTag("Scene Manager").GetComponent<ChangeScene>();
         playerTextSymbols = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
         SM = GameObject.FindGameObjectWithTag("SymbolManager").GetComponent<symbolManager>();
         ResetText();
@@ -34,8 +36,20 @@ public class TextManager : MonoBehaviour
     public void ResetText()
     {
         playerText = "";
+        Debug.Log(textShown +"          "+ tutorialText.Length);
+
+        if (textShown >= tutorialText.Length)
+        {
+            CS.ChangeSceneTo("TitleScreen");
+        }
+
         playerTypedText = tutorialText[textShown];
         playerTextSymbols.text = tutorialText[textShown];
+
+ //           CS.ChangeSceneTo("TitleScreen");
+
+        
+        
     }
     public void AddTextToTextbox(char letter)
     {

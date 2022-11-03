@@ -630,10 +630,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText:
   - '_____ my plants.         '
+  - '_____ my hard drive.          '
   - 'delete my _____ing history.          '
+  - 'cancel __ ___scription.          '
+  - 'shred my _____.          '
+  - 'submit my _____.          '
+  - 'iron my _____.          '
+  - 'change __ car''s ___.          '
+  - 'update my _____.          '
+  - 'tell _____ I love them.          '
   tutorialTextAnswer:
   - water
+  - scrub
   - brows
+  - mysub
+  - bills
+  - essay
+  - shirt
+  - myoil
+  - media
+  - Craig
   playerText: 
   playerTypedText: 
   textShown: 0

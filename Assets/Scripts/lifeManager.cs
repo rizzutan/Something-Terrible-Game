@@ -17,7 +17,6 @@ public class lifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(lives);
         if (lives == 3)
         {
             text.text = "<sprite=5> <sprite=5> <sprite=5>";

@@ -11,6 +11,7 @@ public class symbolManager : MonoBehaviour
     //public string playerText;
     bool isPlayerCorrect;
 
+    public ChangeScene CS;
     InputManager IM;
     TextManager TM;
     AssignSymbol AS;
@@ -40,6 +41,8 @@ public class symbolManager : MonoBehaviour
         {
             Debug.Log("Ding! Correct!");
             // wait [x] amount of seconds
+            // changes scene if textShown is greater than the amount of lines in tutorialText
+
             TM.NextPhrase();
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
             for (int i = 0; i < floatingSymbols.Length; i++) { Destroy(floatingSymbols[i]); }
