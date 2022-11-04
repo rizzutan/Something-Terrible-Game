@@ -495,7 +495,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -513,7 +513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568626887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0.6, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1070,44 +1070,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialougeText:
-  - (Ugh, what happened? My head feels...fuzzy.)
-  - (...)
-  - (oh right, I'm dead.)
+  - Aww bro! <3
+  - ...okay, I got all of 'em down. Anything else?
+  - Nope! Now I can die without any regrets.
+  - Okay cool. Now can you tell me who killed-
   - 
-  - Hey, it's me Craig, your highschool bud
-  - It really sucked that you died.
-  - I'm here wondering what you died from. So uh, if you could respond from the dead
-    that'd be real cool.
-  - (Craig! I've got some-)
-  - <sprite=5><sprite=2><sprite=5><sprite=3><sprite=2><sprite=5><sprite=3><sprite=0><sprite=1><sprite=5><sprite=0><sprite=4><sprite=1><sprite=3><sprite=5>
-  - ...uh, I'm not following....
-  - (huh!? my voice came out all weird!)
-  - Listen, if you're just gonna mess with me, then I'll just leave...
-  - ...no..wait...
-  - (I gotta focus on the words I want to say before speaking...)
-  - Yea? what is it bro?
-  - ...before I tell you...could you do a few things for me first...?
-  - sure thing man. tell me.
-  - '[Hint: match the symbol to the letter to form a word!]'
+  - '[And thus you died without any regrets]'
+  - The End!
   dialougeColor:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  - {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  - {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   stringNum: 0
   playerText: {fileID: 0}
   blackBox: {fileID: 568626887}

@@ -40,14 +40,11 @@ public class TextManager : MonoBehaviour
 
         if (textShown >= tutorialText.Length)
         {
-            CS.ChangeSceneTo("TitleScreen");
+            CS.ChangeSceneTo("EndDialougeGood");
         }
 
         playerTypedText = tutorialText[textShown];
         playerTextSymbols.text = tutorialText[textShown];
-
- //           CS.ChangeSceneTo("TitleScreen");
-
         
         
     }

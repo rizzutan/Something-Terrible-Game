@@ -32,7 +32,8 @@ public class lifeManager : MonoBehaviour
         else if (lives == 0)
         {
             text.text = "";
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            SceneManager.LoadScene("EndDialougeBad", LoadSceneMode.Single);
+            
         }
     }
 }

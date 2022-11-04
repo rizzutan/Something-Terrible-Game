@@ -216,6 +216,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1245823602}
+  - {fileID: 568626889}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -368,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285416714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: -2.5, z: -1}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -493,9 +494,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -512,13 +513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568626887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -399.4216, y: -224.0058, z: 0}
+  m_LocalScale: {x: 43.38395, y: 43.38395, z: 43.38395}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 47291266}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611575454
 GameObject:
@@ -598,7 +599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b7567a7aebda47740a9eeda6f2973fa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1070,44 +1071,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialougeText:
-  - (Ugh, what happened? My head feels...fuzzy.)
-  - (...)
-  - (oh right, I'm dead.)
-  - 
-  - Hey, it's me Craig, your highschool bud
-  - It really sucked that you died.
-  - I'm here wondering what you died from. So uh, if you could respond from the dead
-    that'd be real cool.
-  - (Craig! I've got some-)
-  - <sprite=5><sprite=2><sprite=5><sprite=3><sprite=2><sprite=5><sprite=3><sprite=0><sprite=1><sprite=5><sprite=0><sprite=4><sprite=1><sprite=3><sprite=5>
-  - ...uh, I'm not following....
-  - (huh!? my voice came out all weird!)
-  - Listen, if you're just gonna mess with me, then I'll just leave...
-  - ...no..wait...
-  - (I gotta focus on the words I want to say before speaking...)
-  - Yea? what is it bro?
-  - ...before I tell you...could you do a few things for me first...?
-  - sure thing man. tell me.
-  - '[Hint: match the symbol to the letter to form a word!]'
+  - sorry bro, I cant understand what youre saying. I guess this is goodbye.
+  - (wait! no! Craig!)
+  - <sprite=5><sprite=3><sprite=4><sprite=0><sprite=1><sprite=2><sprite=4><sprite=2><sprite=4><sprite=1><sprite=3><sprite=5>
   dialougeColor:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
   stringNum: 0
   playerText: {fileID: 0}
   blackBox: {fileID: 568626887}
@@ -1193,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3894838465418741516, guid: 8041bf00d7a1b594f95174cf41419ddc, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3894838465418741516, guid: 8041bf00d7a1b594f95174cf41419ddc, type: 3}
       propertyPath: m_LocalPosition.x

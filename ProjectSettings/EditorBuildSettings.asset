@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 98d42eb4b52f44039ae47e18405484f6
+  - enabled: 1
+    path: Assets/Scenes/IntroDialouge.unity
+    guid: 2bcafae1aa9d1c344976aa79efdfb343
+  - enabled: 1
+    path: Assets/Scenes/endDialougeGood.unity
+    guid: b76807a673e165343813a112d5622dd5
+  - enabled: 1
+    path: Assets/Scenes/endDialougeBad.unity
+    guid: c3cd612b66583f049975695464ef97f5
   m_configObjects: {}
