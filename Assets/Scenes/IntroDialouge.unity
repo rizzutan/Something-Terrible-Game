@@ -493,7 +493,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -598,7 +598,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b7567a7aebda47740a9eeda6f2973fa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1070,25 +1070,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialougeText:
-  - (Ugh, what happened? My head feels...fuzzy.)
+  - (Ugh, what happened? My head feels... fuzzy.)
   - (...)
-  - (oh right, I'm dead.)
+  - (Oh right, I'm dead.)
   - 
-  - Hey, it's me Craig, your highschool bud
+  - Hey, it's me Craig, your highschool bud.
   - It really sucked that you died.
-  - I'm here wondering what you died from. So uh, if you could respond from the dead
-    that'd be real cool.
-  - (Craig! I've got some-)
+  - I'm here wondering what you died from.
+  - So uh...
+  - If you could respond from the dead that'd be real cool.
+  - "(Craig! I've got some\u2014)"
   - <sprite=5><sprite=2><sprite=5><sprite=3><sprite=2><sprite=5><sprite=3><sprite=0><sprite=1><sprite=5><sprite=0><sprite=4><sprite=1><sprite=3><sprite=5>
   - ...uh, I'm not following....
-  - (huh!? my voice came out all weird!)
+  - (Huh!? My voice came out all weird!)
   - Listen, if you're just gonna mess with me, then I'll just leave...
-  - ...no..wait...
-  - (I gotta focus on the words I want to say before speaking...)
-  - Yea? what is it bro?
-  - ...before I tell you...could you do a few things for me first...?
-  - sure thing man. tell me.
-  - '[Hint: match the symbol to the letter to form a word!]'
+  - ...no... wait...
+  - (I've gotta focus on the words I want to say before speaking...)
+  - Yea? What is it bro?
+  - ...before I tell you... could you do a few things for me first...?
+  - Sure thing man. Tell me.
+  - '[Hint: Match the symbol to the letter to form a word!]'
   dialougeColor:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
@@ -1097,6 +1098,8 @@ MonoBehaviour:
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
+  - {r: 0.6784314, g: 0.44313726, b: 0.6156863, a: 1}
+  - {r: 0.6784314, g: 0.44313726, b: 0.6156863, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}

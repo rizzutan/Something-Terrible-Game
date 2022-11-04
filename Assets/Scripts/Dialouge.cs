@@ -26,7 +26,7 @@ public class Dialouge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stringNum >= 18 && currentScene.buildIndex == 5)
+        if (stringNum >= 20 && currentScene.buildIndex == 5)
         {
             CS.ChangeSceneTo("ZachMainGame");
         }
@@ -34,7 +34,7 @@ public class Dialouge : MonoBehaviour
         {
             CS.ChangeSceneTo("TitleScreen");
         }
-        if (stringNum >= 3 && currentScene.buildIndex == 7)
+        if (stringNum >= 4 && currentScene.buildIndex == 7)
         {
             CS.ChangeSceneTo("GameOver");
         }
@@ -60,11 +60,11 @@ public class Dialouge : MonoBehaviour
             blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         }
 
-        if (stringNum == 1 && currentScene.buildIndex == 7)
+        if (stringNum == 2 && currentScene.buildIndex == 7)
         {
             blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, blackBox.GetComponent<SpriteRenderer>().color.a + (Time.deltaTime));
         }
-        if (stringNum > 1 && currentScene.buildIndex == 7)
+        if (stringNum > 2 && currentScene.buildIndex == 7)
         {
             blackBox.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         }
