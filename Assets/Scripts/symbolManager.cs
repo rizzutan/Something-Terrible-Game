@@ -19,6 +19,9 @@ public class symbolManager : MonoBehaviour
     lifeManager LM;
     public GameObject FloatingLetter;
 
+    [SerializeField] AudioSource correct;
+    [SerializeField] AudioSource incorrect;
+
 
 
     // Start is called before the first frame update
@@ -47,6 +50,7 @@ public class symbolManager : MonoBehaviour
             TM.NextPhrase();
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
             for (int i = 0; i < floatingSymbols.Length; i++) { Destroy(floatingSymbols[i]); }
+            correct.Play();
             CreateSymbolString();
         }
         else
@@ -55,6 +59,7 @@ public class symbolManager : MonoBehaviour
             // wait [x] amount of seconds
             TM.ResetText();
             LM.lives--;
+            incorrect.Play();
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
         }
 
