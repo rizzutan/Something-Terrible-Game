@@ -1076,8 +1076,8 @@ MonoBehaviour:
   - (Wait! No! Craig!)
   - <sprite=5><sprite=3><sprite=4><sprite=0><sprite=1><sprite=2><sprite=4><sprite=2><sprite=4><sprite=1><sprite=3><sprite=5>
   dialougeColor:
-  - {r: 0.6784314, g: 0.4431373, b: 0.6156863, a: 1}
-  - {r: 0.6784314, g: 0.44313726, b: 0.6156863, a: 1}
+  - {r: 0.83137256, g: 0.62352943, b: 0.7764706, a: 1}
+  - {r: 0.83137256, g: 0.62352943, b: 0.7764706, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   stringNum: 0

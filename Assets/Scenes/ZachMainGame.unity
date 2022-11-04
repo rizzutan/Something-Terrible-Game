@@ -1959,7 +1959,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7e9d4c35c1e287446a6c0659575c2494, type: 2}
     - target: {fileID: 9190491251721321715, guid: 0140e2f074e0ba34d8272426a2106d15, type: 3}
       propertyPath: m_fontStyle
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9190491251721321715, guid: 0140e2f074e0ba34d8272426a2106d15, type: 3}
       propertyPath: m_fontSizeBase
