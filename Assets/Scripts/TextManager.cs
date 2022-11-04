@@ -14,6 +14,8 @@ public class TextManager : MonoBehaviour
     public symbolManager SM;
     public ChangeScene CS;
 
+    public string scrambledTextAnswer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,13 @@ public class TextManager : MonoBehaviour
     public void NextPhrase()
     {
         textShown += 1;
+        scrambledTextAnswer = "";
+        ScrambleAnswerText();
         ResetText();
     }
     public void ResetText()
     {
+        
         playerText = "";
         Debug.Log(textShown +"          "+ tutorialText.Length);
 
@@ -99,6 +104,18 @@ public class TextManager : MonoBehaviour
         }
         if (!flaggedFalse) { SM.sentMessage(true); }
         
+    }
+
+    public void ScrambleAnswerText()
+    {
+        List<char> answer = new();
+        answer.AddRange(tutorialTextAnswer[textShown]);
+        for (int i = 0; i < 5; i++)
+        {
+            int value = Random.Range(0, answer.Count - 1);
+            scrambledTextAnswer += answer[value];
+            answer.RemoveAt(value);
+        }
     }
 
 }

@@ -70,27 +70,27 @@ public class InputManager : MonoBehaviour
                 }
                 else if (verticalInputN)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][1]); playerCanInput = false; print("Key : S, Letter: " + TM.tutorialTextAnswer[TM.textShown][1]);
+                    TM.AddTextToTextbox(TM.scrambledTextAnswer[1]); playerCanInput = false; print("Key : S, Letter: " + TM.scrambledTextAnswer[1]);
                     input.Play();
                 }      //ghost
                 else if (horzontalInputN)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][0]); playerCanInput = false; print("Key : A, Letter: " + TM.tutorialTextAnswer[TM.textShown][0]);
+                    TM.AddTextToTextbox(TM.scrambledTextAnswer[0]); playerCanInput = false; print("Key : A, Letter: " + TM.scrambledTextAnswer[0]);
                     input.Play();
                 }     //triangle
                 else if (horzontalInputP)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][2]); playerCanInput = false; print("Key : D, Letter: " + TM.tutorialTextAnswer[TM.textShown][2]);
+                    TM.AddTextToTextbox(TM.scrambledTextAnswer[2]); playerCanInput = false; print("Key : D, Letter: " + TM.scrambledTextAnswer[2]);
                     input.Play();
                 }     //square
                 else if (spaceButtonInput)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][3]); playerCanInput = false; print("Key : F, Letter: " + TM.tutorialTextAnswer[TM.textShown][3]);
+                    TM.AddTextToTextbox(TM.scrambledTextAnswer[3]); playerCanInput = false; print("Key : F, Letter: " + TM.scrambledTextAnswer[3]);
                     input.Play();
                 }    //diamond
                 else if (pauseButtonInput)
                 {
-                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][4]); playerCanInput = false; print("Key : G, Letter: " + TM.tutorialTextAnswer[TM.textShown][4]);
+                    TM.AddTextToTextbox(TM.scrambledTextAnswer[4]); playerCanInput = false; print("Key : G, Letter: " + TM.scrambledTextAnswer[4]);
                     input.Play();
                 }    //circle
             }

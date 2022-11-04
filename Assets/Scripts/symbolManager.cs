@@ -32,6 +32,7 @@ public class symbolManager : MonoBehaviour
         //AS = GameObject.Find("AssignSymbol").GetComponent<AssignSymbol>();
         LM = GameObject.Find("LifeManager").GetComponent<lifeManager>();
         //tmpPlayerText = GameObject.FindGameObjectWithTag("Player Text").GetComponent<TextMeshProUGUI>();
+        TM.ScrambleAnswerText();
         CreateSymbolString();
     }
     void Update()
@@ -51,6 +52,7 @@ public class symbolManager : MonoBehaviour
             GameObject[] floatingSymbols = GameObject.FindGameObjectsWithTag("FloatingSymbol");
             for (int i = 0; i < floatingSymbols.Length; i++) { Destroy(floatingSymbols[i]); }
             correct.Play();
+            
             CreateSymbolString();
         }
         else
@@ -91,24 +93,24 @@ public class symbolManager : MonoBehaviour
                 // 5 == 'g key' (g on makey-makey) == CircleSymbol
 
                 case 0:
-                    symbol = TM.tutorialTextAnswer[TM.textShown][0];
+                    symbol = TM.scrambledTextAnswer[0];
                     break;
                 case 1:
-                    symbol = TM.tutorialTextAnswer[TM.textShown][1];
+                    symbol = TM.scrambledTextAnswer[1];
                     break;
                 case 2:
-                    symbol = TM.tutorialTextAnswer[TM.textShown][2];
+                    symbol = TM.scrambledTextAnswer[2];
                     break;
                 case 3:
-                    symbol = TM.tutorialTextAnswer[TM.textShown][3];
+                    symbol = TM.scrambledTextAnswer[3];
                     break;
                 default:
-                    symbol = TM.tutorialTextAnswer[TM.textShown][4];
+                    symbol = TM.scrambledTextAnswer[4];
                     break;
             }
             symbolString += symbol;
         }
         Debug.Log("Symbol String: " + symbolString);
-        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(TM.tutorialTextAnswer[TM.textShown]);
+        FloatingLetter.GetComponent<AssignSymbol>().InstantiateFloatingSymbol(TM.scrambledTextAnswer);
     }
 }
