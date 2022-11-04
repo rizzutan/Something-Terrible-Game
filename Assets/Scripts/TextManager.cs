@@ -108,6 +108,10 @@ public class TextManager : MonoBehaviour
 
     public void ScrambleAnswerText()
     {
+        if (textShown >= tutorialText.Length)
+        {
+            CS.ChangeSceneTo("EndDialougeGood");
+        }
         List<char> answer = new();
         answer.AddRange(tutorialTextAnswer[textShown]);
         for (int i = 0; i < 5; i++)

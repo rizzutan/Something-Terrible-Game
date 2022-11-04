@@ -30,7 +30,7 @@ public class Dialouge : MonoBehaviour
         {
             CS.ChangeSceneTo("ZachMainGame");
         }
-        if (stringNum >= 8 && currentScene.buildIndex == 6)
+        if (stringNum >= 7 && currentScene.buildIndex == 6)
         {
             CS.ChangeSceneTo("TitleScreen");
         }
