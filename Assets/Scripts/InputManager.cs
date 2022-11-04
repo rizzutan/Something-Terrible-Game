@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour
     public ChangeScene CS;
     public TextManager TM;
     public Dialouge dialog;
+    public SpawnCraig craig;
     lifeManager LM;
     Scene currentScene;
 
@@ -32,6 +33,10 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 3) // credits screen
+        {
+            craig = GameObject.Find("SpawnCraig").GetComponent<SpawnCraig>();
+        }
         CS = GameObject.FindGameObjectWithTag("Scene Manager").GetComponent<ChangeScene>();
         TM = GameObject.Find("TextManager").GetComponent<TextManager>();
         LM = GameObject.Find("LifeManager").GetComponent<lifeManager>();
@@ -98,7 +103,7 @@ public class InputManager : MonoBehaviour
             {
                 if (verticalInputN) { CS.ChangeSceneTo("TitleScreen"); playerCanInput = false; }
             }
-            else if (currentScene.buildIndex == 3)
+            else if (currentScene.buildIndex == 3) // credits screen
             {
                 if (verticalInputN) { CS.ChangeSceneTo("TitleScreen"); playerCanInput = false; }
             }
@@ -114,6 +119,14 @@ public class InputManager : MonoBehaviour
             }
         }
         else { PauseInputUntil(0.5f); }
+
+        if (currentScene.buildIndex == 3) // credits screen
+        {
+            if (verticalInputP
+                && horzontalInputN
+                && horzontalInputP) 
+            { craig.Craig(); }
+        }
     }
 
     public void PauseInputUntil(float seconds)
