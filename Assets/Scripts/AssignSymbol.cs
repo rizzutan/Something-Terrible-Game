@@ -34,7 +34,7 @@ public class AssignSymbol : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             int value = Random.Range(0, positions.Count - 1);
-            GameObject symbol = Instantiate(symbols[i], positions[value] + new Vector3(Random.Range(-0.99f,1), Random.Range(-0.99f, 1), 0), Quaternion.identity);
+            GameObject symbol = Instantiate(symbols[i], positions[value] + new Vector3(Random.Range(-0.5f,0.5f), Random.Range(-0.5f, 0.5f), 0), Quaternion.identity);
             positions.RemoveAt(value);
             symbol.transform.localScale = Vector3.one * 0.4f;
             if (i < word.Length)

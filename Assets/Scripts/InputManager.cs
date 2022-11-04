@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour
 
     public float lerpPercentageComplete = 0;
 
+    bool playerCanInput = false;
+
     public string playerTextLetters;
     public TMP_Text playerTextSymbols;
     public ChangeScene CS;
@@ -39,74 +41,89 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // left and right controls
-        horzontalInputP = Input.GetButtonDown("HorizontalP");
-        horzontalInputN = Input.GetButtonDown("HorizontalN");
-        // up and down controls
-        verticalInputP = Input.GetButtonDown("VerticalP");
-        verticalInputN = Input.GetButtonDown("VerticalN");
-        // start/space button
-        spaceButtonInput = Input.GetButtonDown("space");
-        // back/click button
-        pauseButtonInput = Input.GetButtonDown("click");
+        if (playerCanInput)
+        {
+            // left and right controls
+            horzontalInputP = Input.GetButtonDown("HorizontalP");
+            horzontalInputN = Input.GetButtonDown("HorizontalN");
+            // up and down controls
+            verticalInputP = Input.GetButtonDown("VerticalP");
+            verticalInputN = Input.GetButtonDown("VerticalN");
+            // start/space button
+            spaceButtonInput = Input.GetButtonDown("space");
+            // back/click button
+            pauseButtonInput = Input.GetButtonDown("click");
 
-        if (currentScene.buildIndex == 0)
-        {
-            if (verticalInputP) { CS.ChangeSceneTo("IntroDialouge"); }
-            else if (verticalInputN) { CS.ChangeSceneTo("CreditsScreen"); }
-            else if (horzontalInputP) { CS.ChangeSceneTo("HelpScreen"); }
-        }
-        else if (currentScene.buildIndex == 1)
-        {
-            if (verticalInputP)
+            if (currentScene.buildIndex == 0)
             {
-                TM.ResetText(); print("key: W");
-                LM.lives--;
-                input.Play();
+                if (verticalInputP) { CS.ChangeSceneTo("IntroDialouge"); }
+                else if (horzontalInputN) { CS.ChangeSceneTo("CreditsScreen"); }
+                else if (horzontalInputP) { CS.ChangeSceneTo("HelpScreen"); }
             }
-            else if (verticalInputN)
+            else if (currentScene.buildIndex == 1)
             {
-                TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][0]); print("Key : S, Letter: " + TM.tutorialTextAnswer[TM.textShown][0]);
-                input.Play();
-            }      //ghost
-            else if (horzontalInputN)
+                if (verticalInputP)
+                {
+                    TM.ResetText(); print("key: W");
+                    LM.lives--;
+                    input.Play();
+                }
+                else if (verticalInputN)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][1]); playerCanInput = false; print("Key : S, Letter: " + TM.tutorialTextAnswer[TM.textShown][1]);
+                    input.Play();
+                }      //ghost
+                else if (horzontalInputN)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][0]); playerCanInput = false; print("Key : A, Letter: " + TM.tutorialTextAnswer[TM.textShown][0]);
+                    input.Play();
+                }     //triangle
+                else if (horzontalInputP)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][2]); playerCanInput = false; print("Key : D, Letter: " + TM.tutorialTextAnswer[TM.textShown][2]);
+                    input.Play();
+                }     //square
+                else if (spaceButtonInput)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][3]); playerCanInput = false; print("Key : F, Letter: " + TM.tutorialTextAnswer[TM.textShown][3]);
+                    input.Play();
+                }    //diamond
+                else if (pauseButtonInput)
+                {
+                    TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][4]); playerCanInput = false; print("Key : G, Letter: " + TM.tutorialTextAnswer[TM.textShown][4]);
+                    input.Play();
+                }    //circle
+            }
+            else if (currentScene.buildIndex == 2)
             {
-                TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][1]); print("Key : A, Letter: " + TM.tutorialTextAnswer[TM.textShown][1]);
-                input.Play();
-            }     //triangle
-            else if (horzontalInputP)
+                if (verticalInputN) { CS.ChangeSceneTo("TitleScreen"); playerCanInput = false; }
+            }
+            else if (currentScene.buildIndex == 3)
             {
-                TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][2]); print("Key : D, Letter: " + TM.tutorialTextAnswer[TM.textShown][2]);
-                input.Play();
-            }     //square
-            else if (spaceButtonInput)
+                if (verticalInputN) { CS.ChangeSceneTo("TitleScreen"); playerCanInput = false; }
+            }
+            else if (currentScene.buildIndex == 5 || currentScene.buildIndex == 6 || currentScene.buildIndex == 7)
             {
-                TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][3]); print("Key : F, Letter: " + TM.tutorialTextAnswer[TM.textShown][3]);
-                input.Play();
-            }    //diamond
-            else if (pauseButtonInput)
-            {
-                TM.AddTextToTextbox(TM.tutorialTextAnswer[TM.textShown][4]); print("Key : G, Letter: " + TM.tutorialTextAnswer[TM.textShown][4]);
-                input.Play();
-            }    //circle
-        }
-        else if (currentScene.buildIndex == 2)
-        {
-            if (horzontalInputN) { CS.ChangeSceneTo("TitleScreen"); }
-        }
-        else if (currentScene.buildIndex == 3)
-        {
-            if (horzontalInputN) { CS.ChangeSceneTo("TitleScreen"); }
-        }
-        else if (currentScene.buildIndex == 5 || currentScene.buildIndex == 6 || currentScene.buildIndex == 7)
-        {
-            if (verticalInputP || verticalInputN
-               || horzontalInputN || horzontalInputP 
-               || spaceButtonInput || pauseButtonInput)
-            {
-                dialog.stringNum += 1;
-                input.Play();
+                if (verticalInputP || verticalInputN
+                || horzontalInputN || horzontalInputP
+                || spaceButtonInput || pauseButtonInput)
+                {
+                    dialog.stringNum += 1;
+                    input.Play(); playerCanInput = false;
+                }
             }
         }
-    } 
+        else { PauseInputUntil(0.5f); }
+    }
+
+    public void PauseInputUntil(float seconds)
+    {
+        //Calculates the percentageComplete to be used by LerpInput
+        // acts as the acceleration time and the deceleration time, depending on if the player has pressed an input key or not
+        if (lerpPercentageComplete >= 0 && lerpPercentageComplete < 1)
+        {
+            lerpPercentageComplete += Time.deltaTime / seconds;
+        }
+        else if (lerpPercentageComplete > 1) { lerpPercentageComplete = 0; playerCanInput = true; }
+    }
 }
