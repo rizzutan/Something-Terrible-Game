@@ -118,7 +118,7 @@ public class InputManager : MonoBehaviour
                 }
             }
         }
-        else { PauseInputUntil(0.5f); }
+        else { PauseInputUntil(0.2f); }
 
         if (currentScene.buildIndex == 3) // credits screen
         {

@@ -765,7 +765,7 @@ MonoBehaviour:
   - 'submit my _____.          '
   - 'iron my _____.          '
   - 'change __ car''s ___.          '
-  - 'update my _____.          '
+  - 'update my social _____.          '
   - 'tell _____ I love them.          '
   tutorialTextAnswer:
   - water
@@ -784,6 +784,7 @@ MonoBehaviour:
   playerTextSymbols: {fileID: 0}
   SM: {fileID: 0}
   CS: {fileID: 0}
+  scrambledTextAnswer: 
 --- !u!4 &919202626
 Transform:
   m_ObjectHideFlags: 0
